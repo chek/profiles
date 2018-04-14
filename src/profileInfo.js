@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 
 class ProfileInfo extends Component {
@@ -11,11 +12,18 @@ class ProfileInfo extends Component {
     }
     render() {
         return (
-            <li>
-                {this.props.profile.firstName} {this.props.profile.lastName}
-            </li>
+            <div>
+                {this.props.state.currentProfile.firstName} {this.props.state.currentProfile.lastName}
+            </div>
         )
     }
 }
 
-export default ProfileInfo
+function mapStateToProps (state) {
+    return {
+        state: state.state
+    }
+}
+
+export default connect(mapStateToProps)(ProfileInfo)
+

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ProfilesListItem from './profilesListItem';
+import { connect } from 'react-redux'
 
 
 class ProfilesList extends Component {
@@ -11,11 +12,24 @@ class ProfilesList extends Component {
     componentDidMount() {
     }
     render() {
+        console.log('ProfilesList')
+        console.log(this.props.history)
+        console.log(this.props.state.allProfiles)
+        console.log(this.props.profiles)
+        /*
+
+                    {this.props.state.allProfiles.map(function(profile){
+                        return <ProfilesListItem  profile={profile} />
+                    })}
+        
+
+        */
+       const that = this
         return (
             <div>
                 <ul>
-                    {this.props.profiles.map(function(profile){
-                        return <ProfilesListItem  profile={profile} />
+                    {this.props.state.allProfiles.map(function(profile){
+                        return <ProfilesListItem  profile={profile} history={that.props.history} />
                     })}
                 </ul>
             </div>
@@ -23,4 +37,10 @@ class ProfilesList extends Component {
     }
 }
 
-export default ProfilesList
+function mapStateToProps (state) {
+    return {
+        state: state.state
+    }
+}
+
+export default connect(mapStateToProps)(ProfilesList) ;

@@ -1,7 +1,7 @@
 export const ProfilesGenerator = {
 
     generateFirstName() {
-        const firstNames = new Array ();
+        const firstNames = [];
         firstNames[0] = "John";
         firstNames[1] = "Jake";
         firstNames[2] = "Ivan";
@@ -12,7 +12,7 @@ export const ProfilesGenerator = {
     },
 
     generateLastName() {
-        const lastNames = new Array ();
+        const lastNames = [];
         lastNames[0] = "Smith";
         lastNames[1] = "Gavriel";
         lastNames[2] = "Lin";
@@ -24,7 +24,7 @@ export const ProfilesGenerator = {
 
     generateProfils(count) {
         let i = 0;
-        const profiles = new Array ();
+        const profiles = [];
         for (i = 0; i < count; i++) { 
             const profile = {
                 firstName: this.generateFirstName(),

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import store, { history } from './store_modules/store';
+import actions from './store_modules/stateActions'
 
 import './App.css';
 import ProfilesList from './profilesList';
@@ -18,16 +19,15 @@ class App extends Component {
   }
 
   render() {
-    let profiles = [];
-    if (this.state.profiles.length === 0) {
-      profiles = ProfilesGenerator.generateProfils(5)
-      this.setState({ profiles: profiles });
-    } else {
-      profiles = this.state.profiles;
+    let profiles = store.getState().state.allProfiles
+    if (profiles.length === 0) {
+      let profiles = ProfilesGenerator.generateProfils(5)
+      store.dispatch({type: actions.state.ALL_PROFILES, allProfiles: profiles});  
     }
+    
     return (
       <div className="app">
-        <Route exact path="/" component={ProfilesList} profiles={profiles} />
+        <Route exact path="/" history={history} profiles={profiles} component={ProfilesList}  />
         <Route exact path="/profile" history={history} component={ProfileInfo} />
       </div>
     );
