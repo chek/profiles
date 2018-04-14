@@ -12,8 +12,8 @@ class ProfilesListItem extends Component {
     componentDidMount() {
     }
     viewProfile() {
-        store.dispatch({type: actions.state.CURRENT_PROFILE, currentProfile: this.props.profile});
-        this.props.history.push('profile');
+        store.dispatch({type: actions.state.CURRENT_PROFILE, currentProfile: this.props.profile})
+        this.props.history.push('profile')
     }
     render() {
         return (

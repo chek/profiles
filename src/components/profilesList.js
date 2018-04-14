@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { withRouter } from 'react-router-dom'
 import ProfilesListItem from './profilesListItem'
+import Header from './header'
+import Back from './back'
 import { connect } from 'react-redux'
 
 
@@ -16,10 +17,8 @@ class ProfilesList extends Component {
        const that = this
         return (
             <div className="container">
-                <h1>
-                    <i class="fas fa-angle-left"></i>
-                    Workers
-                </h1>
+                <Back history={this.props.history}  />
+                <Header title="Workers" />
                 {this.props.state.allProfiles.map(function(profile){
                     return <ProfilesListItem  profile={profile} history={that.props.history} />
                 })}
@@ -34,4 +33,4 @@ function mapStateToProps (state) {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(ProfilesList))
+export default connect(mapStateToProps)(ProfilesList)

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, withRouter } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import store, { history } from './store_modules/store'
 import actions from './store_modules/stateActions'
 
@@ -34,4 +34,4 @@ class App extends Component {
   }
 }
 
-export default withRouter(App)
+export default App

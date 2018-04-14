@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import Header from './header'
+import Back from './back'
 
 
 class ProfileInfo extends Component {
@@ -9,22 +10,13 @@ class ProfileInfo extends Component {
         this.state = {
         };
     }
-    componentWillMount() {
-        console.log(this.props.state.currentProfile)
-        if (this.props.state.currentProfile === null) {
-            this.props.history.push('');
-        }
-    }
     componentDidMount() {
-
     }
     render() {
         return (
             <div className="container profile-details">
-                <h1>
-                    <i class="fas fa-angle-left"></i>
-                    Worker Profile
-                </h1>
+                <Back history={this.props.history}  />
+                <Header title="Worker Profile" />
                 <div className="row">
                     <div className="col-md-2 col-4" />
                     <div className="col-md-2 col-4 avatar">
@@ -57,5 +49,5 @@ function mapStateToProps (state) {
     }
 }
 
-export default withRouter(connect(mapStateToProps)(ProfileInfo))
+export default connect(mapStateToProps)(ProfileInfo)
 
