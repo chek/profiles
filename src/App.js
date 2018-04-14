@@ -4,8 +4,8 @@ import store, { history } from './store_modules/store';
 import actions from './store_modules/stateActions'
 
 import './App.css';
-import ProfilesList from './profilesList';
-import ProfileInfo from './profileInfo';
+import ProfilesList from './components/profilesList';
+import ProfileInfo from './components/profileInfo';
 import {ProfilesGenerator} from './profilesGenerator'
 
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import store from './store_modules/store'
-import actions from './store_modules/stateActions'
+import store from '../store_modules/store'
+import actions from '../store_modules/stateActions'
 
 
 class ProfilesListItem extends Component {
