@@ -1,6 +1,27 @@
-.profile-name {
+h1 {
+  text-align: center;
+  margin: 50px 0;
+  position: relative;
+}
+h1 svg {
+  /*float: left;*/
+  left: 0;
+  top: -40px;
+  position: absolute
+}
+.profile-list-item {
   cursor: pointer;
   text-align: center;
   font-size: 25px;
   margin: 20px 0;
+  width: 100%;
+}
+.profile-details {
+}
+.profile-details .avatar {
+  margin-bottom: 20px;
+}
+.profile-details .avatar img {
+  width: 100%;
+  border-radius: 50%;
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import ProfilesListItem from './profilesListItem';
+import { withRouter } from 'react-router-dom'
+import ProfilesListItem from './profilesListItem'
 import { connect } from 'react-redux'
 
 
@@ -12,21 +13,13 @@ class ProfilesList extends Component {
     componentDidMount() {
     }
     render() {
-        console.log('ProfilesList')
-        console.log(this.props.history)
-        console.log(this.props.state.allProfiles)
-        console.log(this.props.profiles)
-        /*
-
-                    {this.props.state.allProfiles.map(function(profile){
-                        return <ProfilesListItem  profile={profile} />
-                    })}
-        
-
-        */
        const that = this
         return (
             <div className="container">
+                <h1>
+                    <i class="fas fa-angle-left"></i>
+                    Workers
+                </h1>
                 {this.props.state.allProfiles.map(function(profile){
                     return <ProfilesListItem  profile={profile} history={that.props.history} />
                 })}
@@ -41,4 +34,4 @@ function mapStateToProps (state) {
     }
 }
 
-export default connect(mapStateToProps)(ProfilesList) ;
+export default withRouter(connect(mapStateToProps)(ProfilesList))
