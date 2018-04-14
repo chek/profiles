@@ -26,12 +26,10 @@ class ProfilesList extends Component {
         */
        const that = this
         return (
-            <div>
-                <ul>
-                    {this.props.state.allProfiles.map(function(profile){
-                        return <ProfilesListItem  profile={profile} history={that.props.history} />
-                    })}
-                </ul>
+            <div className="container">
+                {this.props.state.allProfiles.map(function(profile){
+                    return <ProfilesListItem  profile={profile} history={that.props.history} />
+                })}
             </div>
         )
     }

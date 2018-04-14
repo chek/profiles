@@ -17,9 +17,13 @@ class ProfilesListItem extends Component {
     }
     render() {
         return (
-            <li onClick={this.viewProfile.bind(this)}>
-                {this.props.profile.firstName} {this.props.profile.lastName}
-            </li>
+            <div className="row" onClick={this.viewProfile.bind(this)}>
+                <div className="col-md-3" ></div>
+                <div className="col-md-6 profile-name" >
+                    {this.props.profile.firstName} {this.props.profile.lastName}
+                </div>
+                <div className="col-md-3" ></div>
+            </div>
         )
     }
 }
