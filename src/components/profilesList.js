@@ -17,7 +17,6 @@ class ProfilesList extends Component {
        const that = this
         return (
             <div className="container">
-                <Back history={this.props.history}  />
                 <Header title="Workers" />
                 {this.props.state.allProfiles.map(function(profile){
                     return <ProfilesListItem  profile={profile} history={that.props.history} />
